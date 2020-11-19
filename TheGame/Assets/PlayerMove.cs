@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody rb;
+
+    public Text score;
 
     public float fuerzaHaciaAdelante = 2000;
     public float fuerzaHaciaLados = 2000;
@@ -26,5 +29,9 @@ public class PlayerMove : MonoBehaviour
         if(Input.GetKey("a")){
             rb.AddForce(-fuerzaHaciaLados* Time.deltaTime,0,0);
         }
+
+        score.text = transform.position.z.ToString("0");
+
+
     }
 }
