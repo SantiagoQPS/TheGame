@@ -11,15 +11,20 @@ public class PlayerMove : MonoBehaviour
 
     public float fuerzaHaciaAdelante = 2000;
     public float fuerzaHaciaLados = 2000;
+    private Animator anim;
+    public float x,y;
 
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
+
         rb.AddForce(0,0,fuerzaHaciaAdelante * Time.deltaTime);
 
         if(Input.GetKey("d")){
